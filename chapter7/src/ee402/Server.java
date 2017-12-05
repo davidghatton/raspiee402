@@ -21,6 +21,7 @@ public class Server
         {
             serverSocket = new ServerSocket(portNumber);
             System.out.println("New Server has started listening on port: " + portNumber );
+            
         } 
         catch (IOException e) 
         {

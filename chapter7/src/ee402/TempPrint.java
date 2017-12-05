@@ -9,13 +9,10 @@ public class TempPrint {
 
         try {
             FileReader fileReader = new FileReader(fileName);
-
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
             while((line = bufferedReader.readLine()) != null) {
-                float tempC = (Integer.parseInt(line) / 1000);
-                float tempF = ((tempC / 5) * 9) + 32;
-                System.out.println("Temp °C: " + tempC + " Temp °F: " + tempF);
+                System.out.println("Temp °C: " + Integer.parseInt(line) / 1000);
             }
 
             bufferedReader.close();
