@@ -1,5 +1,7 @@
 package ee402;
 import java.io.*;
+import java.net.InetAddress;
+import java.net.*;
 
 public class TempPrint {
     public static void main(String [] args) {
@@ -22,6 +24,14 @@ public class TempPrint {
         }
         catch(IOException ex) {
             System.out.println("Error reading file '" + fileName + "'");
+        }
+        try {
+        	InetAddress localAddress = InetAddress.getLocalHost();
+        	System.out.println("Local hostname is: " + localAddress.getHostName());
+        	System.out.println("Local address is: " + localAddress.getHostAddress());
+        }
+        catch (UnknownHostException e) {
+        	System.out.println("Cannot detect localhost : " + e.toString());
         }
     }
 }
